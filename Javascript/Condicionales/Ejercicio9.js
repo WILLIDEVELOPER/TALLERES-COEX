@@ -11,5 +11,15 @@ let diametroRueda = parseFloat(prompt("Ingrese el diametro de la rueda"))
 let grosorRueda = parseFloat(prompt("Ingrese el grosor de la rueda en metros"))
 
 if (diametroRueda > 1.4) {
-    
+    alert("La rueda es para un vehiculo grande.")
+    if(grosorRueda < 0.4){
+        alert("El grosor para esta rueda es inferior al recomendado")
+    }
+}else if(diametroRueda <= 1.4  && diametroRueda > 0.8){
+    alert("La rueda es para un vehículo mediano")
+    if(grosorRueda < 0.25){
+        alert("El grosor para esta rueda es inferior al recomendado")
+    }
+}else{
+    alert("La rueda es para un vehículo pequeño")
 }

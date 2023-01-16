@@ -12,3 +12,5 @@ for (let index = 0; index < nAlumnos; index++) {
 
     console.log(`El estudiante: ${index+1} Tiene una nota de: ${notas[index]}`)
 }
+
+

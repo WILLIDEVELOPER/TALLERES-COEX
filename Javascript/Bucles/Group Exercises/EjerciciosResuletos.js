@@ -81,5 +81,56 @@
 
 // 2. un cine desea premiar a un cliente cada 50 compras con un descuento de entre 10% a 70% dependiendo del dia de la semana que sea realizada la compra. El programa debe mostrar el nombre del cliente, la pelicula( se ingrese por codigo y solo haya dos), el asiento(no se puede repetir), el precio, el descuento, el precio con descuento, y el total, y la fecha.
 
+let dia = prompt("Ingrese el dia de compra: (1 a 7)");
+let cantCompras = 0;
+let nombreCliente = prompt("Ingrese el nombre del cliente: ");
+let pelicula = parseInt(prompt("Que pelicula se vera la 1 o la 2? "));
+let asiento;
+let precio;
+let descuento;
+let precioDesc;
+let total;
+let fecha = new Date();
+let fechaCompra = 0;
+let cantAsientos=0
 
+switch (dia) {
+  case 1:
+    alert("Domingo, Descuento de 10% por cada 50 compras")
+    cantCompras = parseInt(prompt("Ingrese la cantidad de compras del cliente"))
+    switch (pelicula) {
+        case 1:
+            precio = parseFloat(prompt("Ingrese el precio de la peli 1"))
+            cantAsientos = parseInt(prompt("Ingrese la cantidad de asientos para la peli 1"))
+            for (let index = 0; index < cantAsientos; index++) {
+                asiento = parseInt(prompt("Ingrese su asiento correspondiente "))
+                if(asiento[index+1] == asiento[index]){
+                    alert("No se puede repetir el asiento")
+                }
+                console.log("Asiento ", asiento)
+            }
+            
+            break;
+        case 2:
+            precio = parseFloat(prompt("Ingrese el precio de la peli 2"))
+            break;
+        default:
+            break;
+    }
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+  case 4:
+    break;
+  case 5:
+    break;
+  case 6:
+    break;
+  case 7:
+    break;
+  default:
+    break;
+}
 

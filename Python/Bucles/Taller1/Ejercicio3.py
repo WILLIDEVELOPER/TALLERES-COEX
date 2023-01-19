@@ -6,7 +6,6 @@ numero = int(input("Ingrese un numero: "))
 factorial = 0
 
 primera = numero
-segunda = primera-1
 
 if(numero > 10 and numero < 15):
     for i in range(numero, 0, -1):

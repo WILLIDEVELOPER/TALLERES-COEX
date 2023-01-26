@@ -8,6 +8,7 @@ let familia = {
 };
 
 let datos = {};
+let resultado = {}
 
 const familiares = (n) => {
   let familia = [];
@@ -48,10 +49,9 @@ const ingresarDatos = (nFamiliares, familia) => {
 const mostrarResultados = (familia) => {
   let n = familia.nombre[0].length
   if(n > 0){
-    // console.log(((familia.peso[0][0])/((familia.altura[0][0])**2)))
-    // for (let index = 0; index < n; index++) {
-    //   familia.IMC.push(((familia.peso[0][index])/((familia.altura[0][index])**2)))
-    // }
+    for (let index = 0; index < n; index++) {
+      familia.IMC.push((familia.peso[0][index])/((familia.altura[0][index])**2))
+    }
     return familia
   }else{
     return familia
@@ -73,11 +73,14 @@ while (menu != 4) {
       menu = parseInt(prompt("Ingrese una opcion de menu"));
       break;
     case 3:
-      console.log(familia.peso[0][0], familia.altura[0][0])
-      console.log((familia.peso[0][0])/((familia.altura[0][0])**2));
+      resultado = mostrarResultados(familia)
+      familia.IMC.push(resultado.IMC)
       menu = parseInt(prompt("Ingrese una opcion de menu"));
+      console.log(familia)
       break;
     default:
+      alert("Ingrese una opcion valida")
+      menu = parseInt(prompt("Ingrese una opcion de menu"));
       break;
   }
 }

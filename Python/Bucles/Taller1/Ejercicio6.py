@@ -12,7 +12,7 @@ descuento = 0
 precioTotal = 0
 
 for i in range(0, cantProductos):
-    precioProd = float(input("Ingresa el precio del producto %s: "%i+1))
+    precioProd = float(input("Ingresa el precio del producto %s: "%(i+1)))
     if(precioProd > 100):
         descuento = 0.1
     elif(precioProd > 100 and precioProd < 200):

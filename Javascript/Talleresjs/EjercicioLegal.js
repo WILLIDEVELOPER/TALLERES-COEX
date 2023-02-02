@@ -29,11 +29,27 @@ const ingresarDatos = (n, info) => {
     info.peso = parseFloat(
       prompt(`ingrese el peso del familiar ${info.nombre}`)
     );
-    info.altura = parseFloat(
-      prompt(`ingrese la altura del familiar ${info.nombre}`)
-    );
-    return info;
+    if (info.peso > 0 ) {
+      info.altura = parseFloat(
+        prompt(`ingrese la altura del familiar ${info.nombre}`)
+      );
+      if (info.altura > 0 && info.altura <=2.72) {
+        return info;
+      }else{
+        alert("Ingrese una altura valida")
+        info.altura = parseFloat(
+          prompt(`ingrese la altura del familiar ${info.nombre}`)
+        );
+      }
+    }else{
+      alert("Ingrese un peso valido por favor")
+      info.peso = parseFloat(
+        prompt(`ingrese el peso del familiar ${info.nombre}`)
+      );
+    }
+    
   } else {
+    alert("Ingrese una cantidad valida de familiares")
     return info;
   }
 };
@@ -91,18 +107,45 @@ while (menu != 4) {
         }
       });
       resultado.forEach((e) => {
-        console.log(`Nombre: ${e.nombre}
+        if (e.IMC < 18.5) {
+          console.log(`Nombre: ${e.nombre}
         Peso: ${e.peso}
         Altura: ${e.altura}
-        IMC: ${e.IMC}`);
+        IMC: ${e.IMC.toFixed(2)}
+        Nivel: Bajo peso`);
+        }else if(e.IMC>=18.5 && e.IMC<=24.9){
+          console.log(`Nombre: ${e.nombre}
+        Peso: ${e.peso}
+        Altura: ${e.altura}
+        IMC: ${e.IMC.toFixed(2)}
+        Nivel: Normal`);
+        }else if(e.IMC>=25 && e.IMC<=28.9){
+          console.log(`Nombre: ${e.nombre}
+        Peso: ${e.peso}
+        Altura: ${e.altura}
+        IMC: ${e.IMC.toFixed(2)}
+        Nivel: Sobrepeso`);
+        }else if(e.IMC>=29 && e.IMC<=34.9){
+          console.log(`Nombre: ${e.nombre}
+        Peso: ${e.peso}
+        Altura: ${e.altura}
+        IMC: ${e.IMC.toFixed(2)}
+        Nivel: Obeso l`);
+        }else if(e.IMC >= 35){
+          console.log(`Nombre: ${e.nombre}
+        Peso: ${e.peso}
+        Altura: ${e.altura}
+        IMC: ${e.IMC.toFixed(2)}
+        Nivel: Obeso ll`);
+        }else{
+          console.log(`Nombre: ${e.nombre}
+        Peso: ${e.peso}
+        Altura: ${e.altura}
+        IMC: ${e.IMC.toFixed(2)}
+        Nivel: Not found`);
+        }
       });
-      menu = parseInt(
-        prompt(`Ingrese una opcion de menu
-          1. -Agregar familiares
-          2. -Ingresar datos de familiares
-          3. -Mostrar resultados
-          4. -salir`)
-      );
+      menu = 4
       break;
     default:
       alert("Ingrese una opcion valida");

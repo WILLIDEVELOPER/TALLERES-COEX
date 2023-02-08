@@ -150,7 +150,7 @@ while (menu != 6) {
           if (estudiantes[index].codigo === estudiantes[index - 1].codigo) {
             alert("El codigo que ingresaste ya esta en uso");
             estudiantes[index].codigo = prompt(
-              `Ingrese un codigo unico para el estudiante ${index}. `
+              `Ingrese un codigo unico para el estudiante ${estudiantes[index].nombre}. `
             );
           }
         }

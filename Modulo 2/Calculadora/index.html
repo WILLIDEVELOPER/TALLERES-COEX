@@ -1,117 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
 </head>
-<!-- 2000 + 100 -->
 <body>
-    <div class="mx-auto overflow-hidden mt-10 shadow-lg mb-2 bg-black shadow-lg border rounded-lg lg:w-2/6 md:w-3/6 sm:w-4/6">
-        <div class="">
-          <div class="p-5 text-white text-center text-3xl bg-black">Calculator</div>
-          <div class="pt-16 p-5 pb-0 text-white text-right text-3xl bg-black"> <h4 id="operandos"> 0</h4></div>
-          <div class="p-5 text-white text-right text-3xl bg-black">= <span class="text-orange-500">2100</span></div>
+    <main>
+        <!-- En esta parte es el apartado exclusivo de la calculadora -->
+        <div class="mx-auto overflow-hidden mt-10 shadow-lg mb-2 bg-black shadow-lg border rounded-lg lg:w-2/6 md:w-3/6 sm:w-4/6">
+            <div class="">
+              <div class="p-5 text-white text-center text-3xl bg-black">Calculator</div>
+              <div class="pt-16 p-5 pb-0 text-white text-right text-3xl bg-black" id="operandos"> <label for="" id="operandos"> </label></div>
+              <div class="p-5 text-white text-right text-3xl bg-black"><input id="resultado" type="text" value="0" class="bg-black text-white w-20" /><input id="memoria" type="hidden" value="0" /></div>
+              
+              
+         <div class="flex items-stretch bg-black h-24">
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">%</button>
+            </div>
           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">(</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">)</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="operaciones('dividir'); return false;">÷</button>
+            </div>
+        </div>
+              
+        <div class="flex items-stretch bg-black h-24">
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=7}else{ var str2='7'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">7</button>
+            </div>
           
-     <div class="flex items-stretch bg-black h-24">
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">%</button>
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=8}else{ var str2='8'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">8</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=9}else{ var str2='9'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">9</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none"  onClick="operaciones('multiplicar'); return false;"> x </button>
+            </div>
         </div>
-      
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">(</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">)</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">÷</button>
-        </div>
-    </div>
+              
+        <div class="flex items-stretch bg-black h-24">
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=4}else{ var str2='4'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">4</button>
+            </div>
           
-    <div class="flex items-stretch bg-black h-24">
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">7</button>
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none"  onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=5}else{ var str2='5'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">5</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=6}else{ var str2='6'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">6</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="operaciones('restar'); return false;">-</button>
+            </div>
         </div>
-      
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">8</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">9</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">×</button>
-        </div>
-    </div>
+              
+        <div class="flex items-stretch bg-black h-24">
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=1}else{ var str2='1'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">1</button>
+            </div>
           
-    <div class="flex items-stretch bg-black h-24">
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">4</button>
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=2}else{ var str2='2'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">2</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=3}else{ var str2='3'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">3</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="operaciones('sumar'); return false;">+</button>
+            </div>
         </div>
-      
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">5</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">6</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">-</button>
-        </div>
-    </div>
+              
+        
+        <div class="flex items-stretch bg-black h-24 mb-4">
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="operaciones('limpiar'); return false;">C</button>
+            </div>
           
-    <div class="flex items-stretch bg-black h-24">
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">1</button>
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none" onClick="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=0}else{ var str2='0'; var res = str1.concat(str2);document.getElementById('resultado').value=res;}">0</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">.</button>
+            </div>
+           
+            <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
+              <button class="rounded-full h-20 w-20 flex items-center bg-blue-500 justify-center shadow-lg border-2 border-blue-700 hover:border-2 hover:border-gray-500 focus:outline-none"  onClick="operaciones('igual'); return false;">=</button>
+            </div>
         </div>
-      
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">2</button>
+              
+              
+          </div>
         </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">3</button>
+        <!-- Aqui podemos colocar el historial si eso vamos a hacer o arriba en un nav eso lo veremos cuando hagamo-->
+        <div class="my-2 border-2  bg-black">
+            <h4 class="text-white">Historial de operaciones:</h4>
+            <div class="p-5 text-white text-right text-3xl bg-black"><input id="historial" type="text" value="0" class="bg-black text-white w-20" /><input id="res" type="hidden" value="0" /></div>
         </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">+</button>
-        </div>
-    </div>
-          
-    
-    <div class="flex items-stretch bg-black h-24 mb-4">
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">+</button>
-        </div>
-      
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">0</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-purple-800 justify-center shadow-lg border-2 border-purple-700 hover:border-2 hover:border-gray-500 focus:outline-none">.</button>
-        </div>
-       
-        <div class="flex-1 px-2 py-2 justify-center flex items-center text-white text-2xl font-semibold">
-          <button class="rounded-full h-20 w-20 flex items-center bg-blue-500 justify-center shadow-lg border-2 border-blue-700 hover:border-2 hover:border-gray-500 focus:outline-none">=</button>
-        </div>
-    </div>
-          
-          
-      </div>
-    </div>
+    </main>
+   
 
-    <script src="./Calculadora.js"></script>
+    <script src="Calculadora.js"></script>
 </body>
 </html>

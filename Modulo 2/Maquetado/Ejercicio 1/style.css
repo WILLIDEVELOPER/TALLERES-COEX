@@ -44,7 +44,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
 }
 
 .label{
@@ -71,4 +70,14 @@ button{
 }
 .tercero{
     margin-top: 7px;
+}
+
+.start-form{
+    padding: 5px;
+}
+
+.second-form{
+    height: 100%;
+    padding: 5px;
+    border-right: 2px solid black;
 }

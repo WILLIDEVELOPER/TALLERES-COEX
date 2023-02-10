@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 0.500rem;
+    margin: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.tabla{
+    text-align: center;
+    border-collapse: collapse;
+    min-width: 80%;
+    border: 1px solid black;
+}
+.encabezados{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border: 1px solid yellow;
+    background-color: black;
+    color: white
+}
+.tbody{
+    background-color: white;
+}
+
+.content{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    border: 1px solid black;
+}
+
+.fila:hover{
+    cursor: cell;
+    background-color: rgb(67, 67, 199);
+    color: white;
+}
+
+.uno{
+    background-color: black;
+    color: white;
+    border: 1px solid yellow;
+}

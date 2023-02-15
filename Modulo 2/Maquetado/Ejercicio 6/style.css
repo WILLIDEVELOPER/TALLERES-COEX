@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(118, 48, 167);
+}
+
+.list{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.list :nth-child(1){
+    align-self: center;
+}
+
+.list :nth-child(2){
+    align-self: center;
+}
+
+.pokemonlist{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    width: 160px;
+    color: white;
+    background-color: black;
+    border-radius: 20%;
+}
+
+.listar{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+}
+
+.listar:hover{
+    background-color: rgba(0, 0, 0, 0.133);
+}
+
+.Buscador{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    width: 100px;
+}
+
+.Buscador button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.Buscador button:hover{
+    background-color: rgba(0, 0, 0, 0.133);
+}
+
+.second-col{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

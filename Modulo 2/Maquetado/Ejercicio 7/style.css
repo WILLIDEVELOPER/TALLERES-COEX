@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 30px;
+    width: 100%;
+    height: 2000px;
+    background-color: slateblue;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 370px;
+    padding: 25px;
+    background-color: black;
+    color: white;
+}
+.caja{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 15px;
+}
+
+.caja label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.caja input{
+    background-color: rgb(215, 206, 206);
+    border-radius: 0.500rem;
+    padding: 7px;
+}
+
+.btn{
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 0.500rem;
+    background-color: slateblue;
+    color: white;
+}
+
+.btn:hover{
+    background-color: rgb(138, 127, 209);
+}
+
+.cartas{
+    background-color: rgb(124, 110, 214);
+}
+
+.cont-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    gap: 10px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items:  center;
+    padding: 15px;
+
+}
+
+.card img{
+    width: 120px;
+}

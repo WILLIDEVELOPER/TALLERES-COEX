@@ -157,8 +157,3 @@ d.addEventListener("click", () => {
     res.innerHTML = "Respuesta: Incorrecta";
   }
 });
-
-{
-  /* <div class="">Respuesta: Correcta</div>
-<button type="submit"> Siguiente</button> */
-}

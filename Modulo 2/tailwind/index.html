@@ -12,9 +12,8 @@
 <body>
     <main class="h-screen bg-slate-700">
         <div class="flex flex-row justify-between">
-            <div>
-                <img src="https://images.pexels.com/photos/4323761/pexels-photo-4323761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt="">
+            <div id="ahorcado" class="h-[222px] w-[200px] bg-[url('./hangman-game_pm-1024x212.png')]">
+                
             </div>
 
             <div class="p-[20px] flex flex-col">
@@ -23,9 +22,12 @@
                 <button class="bg-[#58D68D] hover:bg-[#ABEBC6] p-[10px] rounded-md" type="submit" id="btn-search">
                     Buscar</button>
 
-                <h3 class="self-center mt-[20px] text-[#E5E7E9] p-[10px]">Hola</h3>
+                <h3 id="output" class="self-center mt-[20px] text-[#E5E7E9] p-[10px]"></h3>
             </div>
 
+        </div>
+        <div class="w-ful h-[50%] flex justify-center items-center">
+            <p id="resultado" class="text-[80px] "></p>
         </div>
     </main>
 

@@ -11,7 +11,8 @@ let resultado = document.getElementById("resultado");
 let next = document.getElementById("next");
 let clear = document.getElementById("clear");
 let fallo = true;
-
+respuesta.innerHTML = guiones;
+let guionesUpdated = []
 const fallos = (fallo) => {
   let letrica = letra.value;
   for (let i in palabraRandom) {
@@ -21,6 +22,16 @@ const fallos = (fallo) => {
       fallo = false;
     }
   }
+
+
+  for (let i = 0; i < guionesUpdated.length; i++) {
+    if (guionesUpdated[i].includes(letrica)) {
+      fallo = true
+      break;
+    }
+  }
+  
+
 
   if (fallo) {
     contFallos++;
@@ -37,10 +48,13 @@ const fallos = (fallo) => {
       resultado.innerHTML = "Ganaste";
     }
   }
+
+  
 };
 
 letra.addEventListener("keypress", (e) => {
   if (e.keyCode == 13) {
+    guionesUpdated.push(guiones)
     fallos(fallo);
 
     respuesta.innerHTML = guiones;

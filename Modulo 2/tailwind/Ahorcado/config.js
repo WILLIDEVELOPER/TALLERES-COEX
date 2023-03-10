@@ -13,6 +13,10 @@ let clear = document.getElementById("clear");
 let fallo = true;
 respuesta.innerHTML = guiones;
 let guionesUpdated = []
+let palabraCompleta = document.getElementById("palabraCompleta")
+
+
+
 const fallos = (fallo) => {
   let letrica = letra.value;
   for (let i in palabraRandom) {
